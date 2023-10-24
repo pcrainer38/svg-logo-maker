@@ -14,13 +14,13 @@ function writeToFile(fileName, response) {
    // determines the shape to be written based on user input
     var userShape;
     if (response.shape === 'circle') {
-        userShape = Circle;
+        userShape = new Circle();
         optionsString += `<circle cx="150" cy="115" r="80" fill="${response.shapeColor}" />`
     } else if (response.shape === 'square') {
-        userShape = Square;
+        userShape = new Square();
         optionsString += `<rect x="73" y="40" width="160" height="160" fill="${response.shapeColor}" />`;
     } else {
-        userShape = Triangle;
+        userShape = new Triangle();
         optionsString += `<polygon points="150, 18 244, 182 56, 182" fill="${response.shapeColor}" />`
     }
 
