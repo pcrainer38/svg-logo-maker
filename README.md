@@ -26,7 +26,7 @@
 
   ## Link to Walkthrough
 
-  
+  https://drive.google.com/file/d/1h7TbzCekWLDKGyiCC__1MhOXwmmk_FOW/view
 
   ## Credits   
  
@@ -48,8 +48,8 @@
 
   ## Images
 
-  ![Alt text](<images/Screenshot Circle.png>)
+ ![Alt text](examples/circle.svg)
 
-  ![Alt text](<images/Screenshot square.png>)
+ ![Alt text](examples/square.svg)
 
-  ![Alt text](<images/Screenshot Triangle.png>)
+ ![Alt text](examples/triangle.svg)
