@@ -4,32 +4,32 @@ const { Circle, Square, Triangle} = require('./lib/shapes');
 
 // function writes the svg file using the input from inquirer prompts
 function writeToFile(fileName, response) {
-    var string = '';
+    var optionsString = '';
 
     // sets the height and width of the container that holds the shape
-    string = '<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">';
-    string += '<g>';
-    string += `${response.shape}`;
+    optionsString = '<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">';
+    optionsString += '<g>';
+    optionsString += `${response.shape}`;
 
-
+   // determines the shape to be written based on user input
     var userShape;
     if (response.shape === 'circle') {
         userShape = Circle;
-        string += `<circle cx="150" cy="115" r="80" fill="${response.shapeColor}" />`
+        optionsString += `<circle cx="150" cy="115" r="80" fill="${response.shapeColor}" />`
     } else if (response.shape === 'square') {
         userShape = Square;
-        string += `<rect x="73" y="40" width="160" height="160" fill="${response.shapeColor}" />`;
+        optionsString += `<rect x="73" y="40" width="160" height="160" fill="${response.shapeColor}" />`;
     } else {
         userShape = Triangle;
-        string += `<polygon points="150, 18 244, 182 56, 182" fill="${response.shapeColor}" />`
+        optionsString += `<polygon points="150, 18 244, 182 56, 182" fill="${response.shapeColor}" />`
     }
 
     // determines placement and color of text based on user responses to inquirer prompt
-    string += `<text x="150" y="130" text-anchor="middle" font-size="50" fill="${response.textColor}">${response.text}</text>`;
-    string += '</g>';
-    string += '</svg>';
+    optionsString += `<text x="150" y="130" text-anchor="middle" font-size="50" fill="${response.textColor}">${response.text}</text>`;
+    optionsString += '</g>';
+    optionsString += '</svg>';
 
-    fs.writeFile(fileName, string, (err) => {
+    fs.writeFile(fileName, optionsString, (err) => {
         err ? console.log(err) : console.log('Generated logo.svg');
     });
 };    
